@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app1'>
+<head>   
+<title>Flaskr</title>
+ <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" type=text/css href="{{url_for( 'fbad.static',filename='styles/bootstrap/bootstrap.min.css') }}">   
+<link rel="stylesheet" href="{{url_for( 'fbad.static',filename='styles/w2ui-1.5.rc1.min.css') }}">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/outside/spin.min.js') }}"></script>
+  <!-- Theme style -->
+   <link rel="stylesheet" href="{{url_for( 'fbad.static',filename='styles/bootstrap/AdminLTE.min.css') }}"> 
+  <link rel="stylesheet" href="{{url_for( 'fbad.static',filename='styles/bootstrap/skins/_all-skins.min.css')}}"> 
+ 
+ 
+<link rel="stylesheet" href="{{url_for( 'fbad.static',filename='styles/morris.css')}}">
+
+    
+<!-- All jquery js Start -->
+<!-- jQuery UI 1.11.4 -->
+
+<!--<script type="text/javascript" src="{{url_for( 'fbad.static', filename='js/plugins/jQuery/jquery-3.1.1.min.js') }}"></script>-->
+
+<script type="text/javascript" src="{{url_for( 'fbad.static', filename='js/outside/jquery2.1.1.min.js') }}"></script>   
+<script type="text/javascript" src="{{url_for( 'fbad.static', filename='js/outside/d3.min.js') }}"></script>    
+<script type="text/javascript" src="{{url_for( 'fbad.static', filename='js/outside/raphael.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/outside/bootstrap.min.js') }}"></script>   
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/outside/angular.min.js') }}"></script>    
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/outside/w2ui-1.5.rc1.min.js') }}"></script>   
+
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/outside/morris.min.js') }}"></script>  
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/outside/lodash.core.min.js') }}"></script>   
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/outside/underscore-min.js') }}"></script> 
+
+
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">   
+    	<header class="main-header">
+		<div class="logo">
+			<span class="logo-mini"><b>A</b>LT</span>
+		      <!-- logo for regular state and mobile devices -->
+		      <span class="logo-lg">
+		      	<b>NCSOFT BI ANALYTICS</b>
+		      </span>
+		  </div>  
+     <nav class="navbar navbar-static-top">
+     <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="navbar-custom-menu"  ng-controller='GetFBAdDataCtrl'>
+      	<ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o"></i>
+             
+                <span class="label label-success" ng-hide="loading" >{a liveUsers a}</span>
+              
+              <span ng-show="loading" id="foo"> </span>
+
+               
+            </a>
+            <ul class="dropdown-menu" >
+              <li class="header" ng-hide="loading">There are {a liveUsers a} live users now</li>
+            </ul>
+          </li>
+
+          <!-- Tasks: style can be found in dropdown.less -->
+
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              
+              <!-- Menu Body -->
+
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+  </header>
+<!-- Left side column. contains the logo and sidebar -->
+{% block sidebar %}{% endblock sidebar %}
+{% block content %}{% endblock content %}
+</div> 
+    
+    
+<script type="text/javascript" src="{{url_for( 'fbad.static', filename='js/plugins/sparkline/jquery.sparkline.min.js') }}"></script> 
+<script type="text/javascript" src="{{url_for( 'fbad.static', filename='js/plugins/fastclick/fastclick.js') }}"></script>
+<script type="text/javascript" src="{{url_for( 'fbad.static', filename='js/outside/adminlte.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/plugins/chartjs/Chart.min.js') }}"></script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,121 @@
+{% extends "sidebar.html" %}
+{% block content -%}
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/drawGraphs.js') }}"></script> 
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/bar_chart_morris.js') }}"></script>
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/drawSpinner.js') }}"></script> 
+    
+<!--JS Script for Displaying D3 Chart  -->
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/ang.js') }}"></script>
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/getData.js') }}"></script>
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/initd3Chart.js') }}"></script>
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/jssubroutines.js') }}"></script>
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/handle-date-change.js') }}"> </script>
+<link rel="stylesheet" href="{{url_for( 'fbad.static',filename='styles/styles.css') }}"> 
+<script>
+  $().ready(function() {
+          var BarChart=initdbarChart();
+          getFBData(BarChart);
+
+      });
+</script>  
+
+<div class="content-wrapper"> 
+  <section class="content-header">
+      <h1>
+        Data Tables
+        <small>Preview sample</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Charts</a></li>
+        <li class="active">ChartJS</li>
+      </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+           <div class="col-xs-12">
+               <div class="box box-primary">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">FB Adset Data</h3>
+                        <div class="box-body">
+                          <div class="chart">
+                              <div id="areaChart" style="height:400px">
+                                    {% block datatable %}
+                                      <div id="fbgrid" style="height: 400px">
+
+                                      </div> 
+
+                                    {% endblock datatable %}
+                               </div>   
+                          </div> 
+                        </div>    
+                  </div> 
+                </div>   
+            </div>   
+        </div> 
+        <div class="row">
+                  <!-- /.row -->  
+        <!-- /.col (LEFT) -->
+        <div class="col-md-6">
+          <!-- LINE CHART -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Day by Day Comparison</h3>
+
+              <div class="box-tools pull-right">
+                <form class='form-inline'> 
+                    <div class="form-group"> 
+                    <select name="date_in" id="datel">
+                    <option value="">Select a date</option>
+                    </select>  
+                    </div></form>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                
+                {% block barChart %}
+                <div id="barChart" style="height:350px">
+                </div>
+
+                {% endblock barChart %}  
+                
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <div class="col-md-6">
+          <!-- BAR CHART -->
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Adset Daily Budget Data </h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body lineChart">
+             
+                <!--<canvas id="barChart" style="height:300px"></canvas>-->
+                {% block lineChart %}
+                <div id="lchart" style="height:350px">
+
+                </div>
+                {% endblock lineChart %} 
+               
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+        </div>    
+    </section>
+    <!-- /.content -->
+    </div> 
+     {%- endblock content %}  
+

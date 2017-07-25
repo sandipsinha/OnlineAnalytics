@@ -1,0 +1,28 @@
+{% extends "fblayout.html" %}
+
+
+{% block datatable -%}
+ 
+
+ <div id="fbgrid" style="height: 400px">
+
+</div>
+
+{%- endblock datatable %}
+{% block barChart -%}
+
+<div id="barChart" style="height:350px"></div>
+
+{%- endblock barChart %}
+{% block lineChart -%}
+ <div id="lchart" style="height:350px">
+
+ </div> 
+{%- endblock lineChart %}
+<script>
+  $().ready(function() {
+          initdbarChart();
+          getFBData();
+
+      });
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+<title>Flaskr</title>
+ <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<!-- Bootstrap 3.3.6 
+<link rel="stylesheet" type=text/css href="{{url_for( 'fbad.static',filename='styles/bootstrap/bootstrap.min.css') }}">  -->
+<link rel="stylesheet" href="{{url_for( 'fbad.static',filename='styles/w2ui-1.5.rc1.min.css') }}">
+
+
+
+    
+<!-- All jquery js Start -->
+<!-- jQuery UI 1.11.4 
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/outside/bootstrap.min.js') }}"></script>-->
+<script type="text/javascript" src="{{url_for( 'fbad.static', filename='js/plugins/jQuery/jquery-3.1.1.min.js') }}"></script>
+<script type="text/javascript" src="{{url_for( 'fbad.static', filename='js/jquery2.1.1.min.js') }}"></script>
+<script type="text/javascript" src="{{url_for( 'fbad.static', filename='js/raphael.min.js') }}"></script> 
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/morris.min.js') }}"></script>     
+  
+
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/drawDataTable.js') }}"></script>  
+<script type="text/javascript" src="{{ url_for( 'fbad.static', filename='js/w2ui-1.5.rc1.min.js') }}"></script> 
+<!--All jquery End  --->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+  <div >
+        {% block datatable %}{% endblock datatable %}
+   </div>   
+                         
+    
+    
+
+
+</body>
+</html>
+
+
